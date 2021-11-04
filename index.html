@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Psi world</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <main class="container-fluid">
+      <header>
+        <h1 class="text-center">Psi Dapp</h1>
+      </header>
+
+      <!-- Part 1 Setting up Basic Actions and Status-->
+      <section>
+        <h3 class="card-title">Status</h3>
+        <div class="row">
+          <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
+            <p class="info-text alert alert-primary">Network: <span id="network"></span></p>
+          </div>
+          <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
+            <p class="info-text alert alert-secondary">ChainId: <span id="chainId"></span></p>
+          </div>
+          <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
+            <p class="info-text alert alert-success">Accounts: <span id="accounts"></span></p>
+          </div>
+
+        </div>
+      </section>
+
+      <section>
+        <div class="row d-flex justify-content-center">
+          <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="card">
+              <img class="card-img-top" src="/images/metamask-fox.png"
+                alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Basic Actions</h4>
+                <button class="btn btn-primary btn-lg btn-block mb-3" id="connectButton">Connect</button>
+                <button class="btn btn-primary btn-lg btn-block mb-3" id="getAccounts">Eth_accounts</button>
+                <p class="info-text alert alert-secondary">eth_accounts result: <span id="getAccountsResult"></span></p>
+                <p class="info-text alert alert-secondary">eth_accounts balance: <span id="getAccountsBalance"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+          <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Mint ((on_Ropsten_testnet) Ropsten Colors: "0x77041F704d3de5776873479e60f364aFD4A16f5a" )</h4>
+                <button class="btn btn-primary btn-lg btn-block mb-3" id="mintButton">Mint</button>
+                <div id="encrypt-message-form">
+                  <input
+                    class="form-control"
+                    type="number"
+                    placeholder="Amount"
+                    id="mintAmountinput"
+                  />
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </section>
+      <div class="row d-flex justify-content-center">
+        <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Send Eth</h4>
+              <button class="btn btn-primary btn-lg btn-block mb-3" id="sendButton">Send</button>
+              <div id="encrypt-message-form">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Recipient address"
+                  id="recipientAddressinput"
+                />
+              <hr />
+              <div id="encrypt-message-form">
+                <input
+                  class="form-control"
+                  type="number"
+                  placeholder="Amount"
+                  id="sendAmountinput"
+                />
+            </div>
+            <hr />
+          </div>
+        </div>
+      </div>
+      <!-- /Part 1 -->
+    </main>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/node_modules/@metamask/onboarding/dist/metamask-onboarding.bundle.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
